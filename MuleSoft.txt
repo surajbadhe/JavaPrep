@@ -1,0 +1,61 @@
+Private and Public flow
+Async and synchronous flow
+Diff Mule 3 and 4
+Pom components 
+Api auto discovery 
+Load Balancer 
+Type of exception strategies in mule 
+How error handling is done in mule 
+Topic vs queue 
+Pass and Saas difference 
+Application scaling type 
+Branching in terms of version control 
+What is object store and why it used
+
+Error and exception strategy.
+inbound and outbound properties 
+service level access (SLA)
+Query parm 
+path parm 
+
+Http-listener-main 
+
+Flow variable and expression. 
+Flow variable, Sessions and Record diff
+Choice variable 
+
+Http Listener and Http requester 
+what is TLS in Http request configuration
+How to genearter key store
+Authentication and authorization 
+Datawaeve 
+Datasence 
+SMTP is used for email 
+property connector
+validation componentsObject Store
+Anypoint Platform 
+Api exchange
+APi Manager 
+Runtime manager 
+What is API gateway - https://www.youtube.com/watch?v=vHQqQBYJtLI
+	Separate out cross cutting concerns like security , Authentication , authorization 
+	The API gateway points to the backend APIs and services that you define and abstracts them into a layer that Anypoint Platform manages.
+	API gateways are a common component in modern architectures, helping organizations route their API requests, aggregate API responses, and enforce service level agreements through features like rate limiting. But an API gateway also plays an important role as a secure access point that protects an organization’s APIs. API gateways implement industry-standard encryption and access control –– giving API developers a way to let people in and direct them to the right place. Gateways point to the backend APIs and services that you define and abstract them into a layer that can be regulated by your API management solution.
+	- Provide inline proxy control over API.
+	- Identification of API requests through credential and token validation, as well as other authentication means. 
+	- Authorized traffic to pass through the API to backend services.
+	- Metering the traffic using rate limiting and throttling. 
+	- Logging all transactions and applying runtime policies to enforce governance.
+
+	Orchestration is the automated configuration, management, and coordination of computer systems, applications, and services.
+What is rate limiting and throttling 
+	Rate Limiting - policy limits the number of requests an API accepts within a window of time. The API rejects requests that exceed the limit.
+	Multiple clients allowed to send called an Application Rate Limiting. If they are starting to send too many requests, their connection gets throttled. This means the processing slows down but does not disconnect.
+SSL in api gateway
+Policies in mule 
+
+
+1. What is RAML and why we use it?RESTful API Modeling Language
+	RAML can also be used for documentation purpose.Helps client know, what the service is and what/how all operations can be invoked.
+	RAML contains endpoint URL, request/response schema, HTTP methods and query and URI parameter.
+	RAML helps the developer in creating the initial structure of this API. 

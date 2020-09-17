@@ -1,0 +1,39 @@
+---------------------Hibernate-------------------
+
+1. Many to Many relationship
+
+2. Hibernate Cache Design pattern: design Solar system design a parking lot
+
+What is a singleton design pattern?
+
+Composite design pattern Strategy
+
+Design pattern Puzzle:
+
+1.building the wall with 2 kind of bricks ,short one is 1x1 size long one is 1x2 size the short need to build next the long given the length of the wall specify how many ways to build it
+
+2. We have a list of candidates name, your mission is finding candidates voted more than half of the list of candidates.
+
+1) Find the pair of integers in an array whose sum is x.
+	public static void main(String[] args) {
+		int[]  arr= {1,3,5,4,2,3,1};
+		int sum=6;
+		for (int i = 0; i < arr.length; i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				
+				if(arr[i]+arr[j]==sum) {
+					System.out.println(arr[i]+""+""+arr[j] +"---Sum"+(arr[i]+arr[j])); 
+				}
+			}
+		}
+
+	}
+2) Merge Sort
+
+3) Java exceptions
+
+4) Spring Dependency Injection
+
+5) Hibernate Many to Many
+
+6) Hibernate Cache Interview questions from Hoan

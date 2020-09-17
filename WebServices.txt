@@ -1,0 +1,123 @@
+RestFul
+
+Interview Questions:
+	https://www.edureka.co/blog/what-is-microservices/?utm_source=youtube&utm_medium=crosspost&utm_campaign=social-media-edureka-march-samarpit
+	https://codingnconcepts.com/top-microservices-interview-questions/
+
+Monolithic 
+	Means composed all in one piece. A monolithic application is one which is self-contained. All components of the application must be present in order for the code to work.
+Microservices architecture 
+	MSA is an architectural style where the entire application is divided and designed as loosely-coupled, independent services modelled around a business domain.
+	The important point at this stage is that each independent service has a business boundary which can be independently developed, tested, deployed, monitored, and scaled. These can be even developed in different programming languages.
+
+Q1. What do you understand by microservices?
+	When you break an entire application architecture into smaller services where
+
+	Each service is independently serves a functionality of that application
+	Each service has their own development, build process, deployment and testing cycle
+	This kind of setup is known as microservices based architecture.
+
+Microservices architecture for the following benefits:
+		Independently develop and deploy services
+		Speed and agility
+		Better code quality
+		Code created/organized around business functionality
+		Increased productivity
+		Easier to scale
+		Freedom (in a way) to choose the implementation technology/language
+
+Challenges with Micro-services?
+	Microservices use HTTP as the protocol for synchronous communication gives hackers more opportunities for system penetration.
+		User AWS API Gateway (single entry point for all requests) for securing microservices.
+	Monitoring and debugging microservices running in a multi-node environment.	
+		Distributed tracing solutions from Twittter (ZipKin) and Google (Dapper), Opentracing developed by Uber, Apple, Yelp is rapidly becoming the de facto standard for microservices tracing. 
+		AWS X-ray for tracing MC
+
+GET – Used to retrieve data.
+PUT – used to update/Replace/modify data.
+PATCH – used to partial Update/Modify
+POST – used to add new record
+DELETE – used to delete record
+
+Which HTTP method is not idempotent?
+	The PUT and DELETE methods are defined to be idempotent That is, calling the same PUT request multiple times will always produce the same result..
+	GET, HEAD, PUT and DELETE 
+	
+Micro-services
+
+What is the need of Micro-services?
+How you identify that the service implemented is Micro-services 
+Diff of SOA and Micro-services
+	SOA - Service Oriented Architecture 
+	MC 
+New feature of Micro-services
+Why spring boot is preferred for building/design Micro-services
+what things you should consider while developing API Micro-services
+	To help you get started, ask the following questions to yourself.
+
+	Do you have a complete understanding of what microservices are and how they could influence your development operations?
+	Is your business mature enough to adopt microservices?
+	How strong is your practice of application infrastructure?
+	Do you have a tried and tested agile or DevOps practice?
+	Is your data management team skilled enough to support the incorporation? If it’s a no for this one, they will only slow down what is supposed to be a swift process.
+	Is your product at the fulcrum of your business model?
+	What are your goals and vision on scaling up? The architecture is designed for scalability and is ideal only if you have a sound plan of expanding both your product/service and your market.
+	Is your business model tested and proven?
+	
+	When to Use Microservices
+		When you want your monolithic application to accommodate scalability, agility, manageability and delivery speed
+		When you have to rewrite legacy applications in today’s programming languages or tech stacks to keep up with modern-day business requirements and solutions
+		When you have standalone business applications or modules that have to be reused across diverse channels—some good examples would be login services, search options, authentication facilities and more
+		If you’re building a highly agile application (product or service) that demands swift speed of delivery, innovation and more
+
+Diff Rest service and Micro-services
+waht is SAGA pattern , event sourcing , CQRS in Micro-services
+12 factors of Micro-services designing 
+	I. Codebase
+		One codebase tracked in revision control, many deploys
+	II. Dependencies
+		Explicitly declare and isolate dependencies
+	III. Config
+		Store config in the environment
+	IV. Backing services
+		Treat backing services as attached resources
+	V. Build, release, run
+		Strictly separate build and run stages
+	VI. Processes
+		Execute the app as one or more stateless processes
+	VII. Port binding
+		Export services via port binding
+	VIII. Concurrency
+		Scale out via the process model
+	IX. Disposability
+		Maximize robustness with fast startup and graceful shutdown
+	X. Dev/prod parity
+		Keep development, staging, and production as similar as possible
+	XI. Logs
+		Treat logs as event streams
+	XII. Admin processes
+
+	Run admin/management tasks as one-off processes
+How load balancing works
+How blue green deployment works in Micro-services
+If 100 service are there do we need to maintain 100 ports for all 100 service
+for diff countries do we need to maintain diff Micro-services or only one service will work ? which approach is better?
+Can we scale Micro-services at runtime? Any issue in that?
+How to avoid wrong request to reach upto controller? is there any way to reject it before reaching controller?
+what is routing in Micro-services 
+what is use of api gateway
+how Micro-services communicate with each other 
+what is api lifecycle 
+How to identify from 1000 Micro-services which service is down?
+what is the use of docker and kubernate 
+Deployment strategies for Micro-services
+if one instance serving an request and it goes down and if we route that request to other instance, how previous request will behave?
+
+Authentication and Authorization methods?
+	Authentication is the process of verifying who a user is, 
+	Authorization is the process of verifying what they have access to.
+	Spring Cloud security and the OAuth2 (Open Authentication) standard to secure your Spring-based services.
+		OAuth2 - OAuth2 is a token-based authentication and authorization third-party framework. 
+				 If the user successfully authenticates, they will be presented a token that must be sent with every request. The token can then be validated back to the authentication service. 
+		Spring Boot and Spring Cloud each provide an out-of-the-box implementation of an OAuth2 service
+	https://www.marcobehler.com/guides/spring-security

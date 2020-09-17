@@ -1,0 +1,65 @@
+------------------------Spring--------------------
+1.Dependency Injection
+
+2. IOC Container
+
+3. How to validate request header in Spring?
+
+4.difference between spring and spring boot
+
+5. Explain Bean lifecycle in Spring framework?
+
+6.How to get the id field from headers and store it to a variable ?
+
+7.RestController vs controller
+
+8. Questions from the previous project, How you secure rest API. Spring Security Configuration.
+
+9. Http Methods and when you will use what.
+
+10. When you will use Post even if you only want to get data not posting.
+
+11. Singleton. Which scenario?
+
+12. (From the previous project) How you will determine the user credentials.
+
+13. Technical part: - What is a singleton design pattern? - How to validate request header in Spring?
+Your Spring Project Structure 
+Modules of Spring Framework 
+Type of container Spring Container 
+Spring Bean Scope?
+Spring Bean lifecycle?
+IOC
+AOP 
+Dependency Injection 
+Application Context and BeanFactory?
+Diff between IOC and DI?
+Spring Security Methods?
+Different type of auto-wiring?
+Different Controller inside Spring?
+ContextLoaderListener ?
+ViewResolver 
+MultipartResolevr 
+How do you handle exception inside spring MVC ?
+Scope of useBeans ?  Page/Request/Session/Application 
+Singleton Bean ? Per container per bean / Scope of bean def to single obj instance per spring IOC container.
+Where you will find JSP class in tomcat? tomcat->work->catlina->localhost->projectname->org->apache->jsp->.class
+Session Tracking technique?
+	Cookies 
+	Hidden form fields
+	URL rewriting
+	HttpSession
+
+Feature of spring boot?
+How spring boot is helpful to design microservices
+What if we remove @SpringbootApplication for class ? will it still behave has springboot application 
+Differance between @contoller and @RestController?
+What is use of Hystrix and circuit breaker ? how to implement it?
+which annotyation are used in spring boot?
+How to create bean in spring boot java class
+How you secuare your spring boot and mule application in your project 
+Diff of pathvariable and requset parm and queryparm ? which is better to use
+How you handle cross domain errors
+what is the use of @componet @service @repository annotation 
+
+
