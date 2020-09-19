@@ -4,6 +4,10 @@ Interview Questions:
 	https://www.edureka.co/blog/what-is-microservices/?utm_source=youtube&utm_medium=crosspost&utm_campaign=social-media-edureka-march-samarpit
 	https://codingnconcepts.com/top-microservices-interview-questions/
 
+SOAP and RestFul Difference?
+What is Path parm and Query parm? What is use of Query parm?
+
+What is  
 Monolithic 
 	Means composed all in one piece. A monolithic application is one which is self-contained. All components of the application must be present in order for the code to work.
 Microservices architecture 
@@ -38,6 +42,8 @@ PUT – used to update/Replace/modify data.
 PATCH – used to partial Update/Modify
 POST – used to add new record
 DELETE – used to delete record
+
+What is Head and operations?
 
 Which HTTP method is not idempotent?
 	The PUT and DELETE methods are defined to be idempotent That is, calling the same PUT request multiple times will always produce the same result..
@@ -115,9 +121,17 @@ if one instance serving an request and it goes down and if we route that request
 
 Authentication and Authorization methods?
 	Authentication is the process of verifying who a user is, 
-	Authorization is the process of verifying what they have access to.
+	Authorization is the process of verifying what they have access to. (Privileges and Authorities) or to check role  
 	Spring Cloud security and the OAuth2 (Open Authentication) standard to secure your Spring-based services.
 		OAuth2 - OAuth2 is a token-based authentication and authorization third-party framework. 
 				 If the user successfully authenticates, they will be presented a token that must be sent with every request. The token can then be validated back to the authentication service. 
 		Spring Boot and Spring Cloud each provide an out-of-the-box implementation of an OAuth2 service
 	https://www.marcobehler.com/guides/spring-security
+	
+	Authentication - 
+		Http Authentication 
+		Forms base (Login form)
+		Certifiacte 
+		Token 
+	Authorization - 
+

@@ -62,4 +62,5 @@ Diff of pathvariable and requset parm and queryparm ? which is better to use
 How you handle cross domain errors
 what is the use of @componet @service @repository annotation 
 
+Constructor and setter base injection ?
 

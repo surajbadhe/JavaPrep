@@ -21,4 +21,10 @@ Select a.name, a.date from emp a, empb where a.joining=b.joining & a.name > b.na
 
 Aggregation and Association 
 
+Truncate is which type of Command ? Its a DDL.
+	TRUNCATE TABLE empties a table completely. It requires the DROP privilege. Logically, TRUNCATE TABLE is similar to a DELETE statement that deletes all rows, or a sequence of DROP TABLE and CREATE TABLE statements.
+	To achieve high performance, TRUNCATE TABLE bypasses the DML method of deleting data. Thus, it does not cause ON DELETE triggers to fire, it cannot be performed for InnoDB tables with parent-child foreign key relationships, and it cannot be rolled back like a DML operation. 
 
+Truncate and delete Diff?
+
+Procedure and function?
