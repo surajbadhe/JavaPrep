@@ -1,5 +1,6 @@
 RestFul
-
+When can I go with REST API, When can I go with SOAP?
+Do you see any positive part of using SOAP web service with XML? 
 Interview Questions:
 	https://www.edureka.co/blog/what-is-microservices/?utm_source=youtube&utm_medium=crosspost&utm_campaign=social-media-edureka-march-samarpit
 	https://codingnconcepts.com/top-microservices-interview-questions/
@@ -43,6 +44,12 @@ PATCH – used to partial Update/Modify
 POST – used to add new record
 DELETE – used to delete record
 
+HEAD
+OPTIONS
+PATCH
+TRACE
+CONNECT
+
 What is Head and operations?
 
 Which HTTP method is not idempotent?
@@ -78,7 +85,7 @@ what things you should consider while developing API Micro-services
 
 Diff Rest service and Micro-services
 waht is SAGA pattern , event sourcing , CQRS in Micro-services
-12 factors of Micro-services designing 
+12 Factors of Micro-services designing 
 	I. Codebase
 		One codebase tracked in revision control, many deploys
 	II. Dependencies
@@ -103,7 +110,7 @@ waht is SAGA pattern , event sourcing , CQRS in Micro-services
 		Treat logs as event streams
 	XII. Admin processes
 
-	Run admin/management tasks as one-off processes
+Run admin/management tasks as one-off processes
 How load balancing works
 How blue green deployment works in Micro-services
 If 100 service are there do we need to maintain 100 ports for all 100 service

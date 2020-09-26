@@ -14,8 +14,6 @@ Design pattern Puzzle:
 
 2. We have a list of candidates name, your mission is finding candidates voted more than half of the list of candidates.
 
-
-
 4) Spring Dependency Injection
 
 5) Hibernate Many to Many

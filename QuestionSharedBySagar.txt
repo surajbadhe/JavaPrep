@@ -1,11 +1,4 @@
 Consolidated list of questions Java Basics:
-
- 
-
-
-
-
-
 https://javadiscover.blogspot.com/2014/05/using-mutable-objects-inside-user.html?m=2
 
 https://stackoverflow.com/questions/34109363/how-can-we-maintain-immutability-of-a-class-with-a-mutable-reference

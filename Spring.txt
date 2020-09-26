@@ -5,7 +5,7 @@
 
 3. How to validate request header in Spring?
 
-4.difference between spring and spring boot
+4. Difference between spring and spring boot
 
 5. Explain Bean lifecycle in Spring framework?
 
@@ -27,7 +27,16 @@
 Your Spring Project Structure 
 Modules of Spring Framework 
 Type of container Spring Container 
-Spring Bean Scope?
+What are the different scopes of spring bean?
+	Singleton : It returns a single bean instance per Spring IoC container.This single instance is stored in a cache of such singleton beans, and all subsequent requests and references for that named bean return the cached object.If no bean scope is specified in bean configuration file, default to singleton.
+
+	Prototype : It returns a new bean instance each time when requested. It does not store any cache version like singleton.
+
+	Request : It returns a single bean instance per HTTP request.
+
+	Session : It returns a single bean instance per HTTP session (User level session).
+
+	GlobalSession : It returns a single bean instance per global HTTP session. It is only valid in the context of a web-aware Spring ApplicationContext (Application level session).
 Spring Bean lifecycle?
 IOC
 AOP 
@@ -61,6 +70,5 @@ How you secuare your spring boot and mule application in your project
 Diff of pathvariable and requset parm and queryparm ? which is better to use
 How you handle cross domain errors
 what is the use of @componet @service @repository annotation 
-
 Constructor and setter base injection ?
 

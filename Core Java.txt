@@ -7,18 +7,20 @@ Tricky Programs : https://www.youtube.com/playlist?list=PLcow8_btriE0fB-UarDDFau
 Static Imports Java 1.5 feature ? Helps to access any static member of class directly. Ex. we can use out.print("Hello"); No need of system.out
 Java 6 Features 
 	- Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion).
-	- Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities.
+	- Annotations
+	- Static imports concurrency utilities in package java.util.concurrent.
+	- Scanner class for parsing data from various input streams and buffers.
+	- StringBuilder class (in java.lang package)
 	- Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as integer).
+	- Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities.
 	- Enumerations: the enum keyword creates a typesafe, ordered list of values (such as day.monday, day.tuesday, etc.). Previously this could only be achieved by non-typesafe constant integers or manually constructed classes (typesafe enum pattern).
 	- Swing: new skinnable look and feel, called synth.
 	- Var args: the last parameter of a method can now be declared using a type name followed by three dots (e.g. Void drawtext(string... Lines)). In the calling code any number of parameters of that type can be used and they are then placed in an array to be passed to the method, or alternatively the calling code can pass an array of that type.
 	- Enhanced for each loop: the for loop syntax is extended with special syntax for iterating over each member of either an array or any iterable, such as the standard collection classesfix the previously broken semantics of the java memory model, which defines how threads interact through memory.
 	- Automatic stub generation for rmi objects.
-	- Static imports concurrency utilities in package java.util.concurrent.
-	- Scanner class for parsing data from various input streams and buffers.
 	- Assertions
-	- StringBuilder class (in java.lang package)
-	- Annotations
+	
+	
 Java 7 Features 
 	Strings in switch Statement
 	Multi-catch similar exceptions
@@ -26,6 +28,7 @@ Java 7 Features
 	Underscore in Numerical Literals
 	Binary Literals with Prefix “0b”
 	Diamond “<>” Operator
+	List<String> s1=new List<>();
 	Other features
 		Garbage First (G1) garbage collector
 		Java NIO 2.0
@@ -54,7 +57,14 @@ Java 8 important new features
 
 Just in time compiler - JIT compiles bytecodes to machine code at run time and improves the performance of Java applications.Very frequently used methods are compiled as soon as JVM has started, and less used methods are compiled later. 
 
-ClassLoader in Java?
+What are the various memory areas in JVM?
+	Class 
+	Heap
+	Stack 
+	program Counter Register
+	native method Stack 
+
+ClassLoader in Java? It loads classes from different resources. Java ClassLoader is used to load the classes at run time. In other words, JVM performs the linking process at runtime. 
 	Bootstrap class loader - The bootstrap class loader loads the core Java libraries[5] located in the {JAVA_HOME}/lib directory jdk jars rt.jar
 	Extensions class loader - The extensions class loader loads the code in the extensions directories {JAVA_HOME}/lib/ext directory
 	System Class  Path Loader - The system class loader loads code found on java.class.path, which maps to the system CLASSPATH variable
@@ -94,15 +104,15 @@ Different Access specifier and Access Modifier?
 	Protected
 	Public - Less Restrictive
 	
-	Access Specifier	Inside Class	Inside Package	Outside package subclass	Outside package
+	Access Specifier	Inside Class	Inside Package	Outside package by subclass	Outside package
 	Private				Yes				No				No							No
 	Default				Yes				Yes				No							No
 	Protected			Yes				Yes				Yes							No
 	Public				Yes				Yes				Yes							Yes
 
-4) Which Modifiers are not used for the class? Protected and Private modifiers are not used for a class.
+4)Which Modifiers are not used for the class? Protected and Private modifiers are not used for a class.
 
-Some of the non-access specifiers/modifiers in Java are:
+5)Some of the non-access specifiers/modifiers in Java are:
 
 	static
 	final
@@ -112,9 +122,9 @@ Some of the non-access specifiers/modifiers in Java are:
 	synchronized
 	native
 	
-Object class methods(Java.lang.Object)- Clone , equals , finalize , getClass , wait , notify , notifyAll , hashCode.
+6)Object class methods(Java.lang.Object)- Clone , hashCode , equals , finalize , getClass , wait , notify , notifyAll.
 
-Java static keyword?
+7)Java static keyword? 
 	The static can be:
 		The static keyword in Java is used for memory management mainly. We can apply static keyword with variables, methods, blocks and nested classes. The static keyword belongs to the class than an instance of the class.
 		Static Variable (also known as a class variable) - The static variable can be used to refer to the common property of all objects,EX- the company name, college name.The static variable gets 	memory only once in the class area at the time of class loading
@@ -122,11 +132,12 @@ Java static keyword?
 		Block
 		We can not define main class as static only Nested class will
 		Static belongs to the class area and an instance belongs to the heap area.
-Final Keywords
-Significance of final in Java?
-	Final class cannot be extended 
-	Final method cannot be override
-	Final member variable cannot be assigned new value
+
+8)Final Keywords - The final keyword in java is used to restrict the user.
+	Significance of final in Java?
+		Final class cannot be extended 
+		Final method cannot be override
+		Final member variable cannot be assigned new value
 	
 Sequence of execution of, instance method, IIB, static block and constructor in java?
 	Static Block
@@ -224,6 +235,7 @@ What is singleton class? Singleton class means only one instance of class can ex
 			 return instance;
 		}
 	}
+	
 	Eager initialization
 	
 	class Singleton {
@@ -237,10 +249,30 @@ What is singleton class? Singleton class means only one instance of class can ex
 		}
  
 	}
-	YES, we can Serialize Singleton class such that object returned by Deserialization process is in same state as it was during Serialization time (regardless of any change made to it after Serialization) 
+	YES, we can Serialize Singleton class such that object returned by De serialization process is in same state as it was during Serialization time (regardless of any change made to it after Serialization) 
+	
+What is Singleton class and how to prevent it from multi-threading and cloning?
+	class Singleton implements Cloneable {
+		private static Singleton instance;
+		private Singleton(){}
+		public static Singleton getInstance(){
+			if (instance == null)
+				synchronized (Singleton.class) {
+					  if (instance == null)
+							instance = new Singleton();
+					 
+				}
+			}
+			 return instance;
+		}
+		@Override
+		protected Object clone() throws CloneNotSupportedException {
+			throw new CloneNotSupportedException();
+			// return super.clone();
+		}
 
-
-When to use volatile  variable in Java?
+	}
+When to use volatile variable in Java?
 	Java allows threads to access shared variables. As a rule, to ensure that shared variables are consistently updated, a thread should ensure that it has exclusive use of such variables by obtaining a lock that enforces mutual exclusion for those shared variables.
 	Volatile members are never cached in CPU by jvm, they are always read from main memory i.e. from stack where variable lives.
 	A compile-time error will occur if a final variable is declared volatile.
@@ -286,8 +318,10 @@ If two interface has same methods?
 Synchronization - Capacity to control the access of multiple thread to any shared resource.
 Serialization - Mechanism to write state of object into a byte stream.
 	Object Serialization is a process used to convert the state of an object into a byte stream, which can be persisted into disk/file or sent over the network to any other running Java virtual machine. The reverse process of creating an object from the byte stream is called deserialization.
+
 Serializable is marker interface.
 	Marker interface is an interface with no method declared.
+Marker Interface? Marker interface is an interface with no method declared.
 
 Difference between Final , Finally , finalize
 	Final - final can be applied to variable, method and class in java. We can define Final variable, method and class 
@@ -310,8 +344,7 @@ Implicit object in JSP?
 
 Why clone and finalize() method are declared as protected? To make sure that they are only called on subclass object rather than object class object.
 
-
-Can we store variable in local block ?
+Should variables be stored in local blocks?
 
 What is mutable object and immutable object? 
 	immutable - Any change made to object of immutable class produces new object. Ex- String And all other Wrapper classes.
@@ -338,11 +371,18 @@ Create immutable class?
 	}
 
 Creating string with new and ""?
-Which two methods need to be override by object which later used as key in HashMap?
+
+Which two methods need to be override by object which later used as key in HashMap? equal() and hashcode()
+
 Reference type in Java ? Strong Ref and weak Ref?
+	Strong References - Any object which has an active strong reference are not eligible for garbage collection. MyClass obj = new MyClass ();   
+	Weak References
+	Soft References
+	Phantom References
+
 List<Number> number= List<Integer>
-Volatile variable?
-Marker Interface?
+
+
 When to use String , StringBuffer , StringBuilder ?
 	String - String is immutable that makes it a thread -safe class. / Fast
 	StringBuffer - synchronized / Because of synchronized methods its slow. 
@@ -388,20 +428,29 @@ How do you implement thread in Java? Start() and run () methods?
 				my.start();
 			}
 Thread pool 
+
 Advantage of using thread?
+
 How threads are synchronized? Synchronization acquires lock on method or block in which it is used.
+
 Can we start a dead thread? No
+
 Wait and sleep Method?
 	when sleep() is called on thread it goes from running to waiting state and can return to runnable state when sleep time is up. when yield() method is called on thread it goes from running to runnable state, not in waiting state. Thread is eligible to run but not running and could be picked by scheduler at anytime.
+
+
 How will you execute 4 thread in single core processor?
+
 Why wait(),notify(),notifyAll() methods are placed in Object class?
 	When wait() method is called on object by thread it waits for another thread on that object to release object monitor by calling notify() or notifyAll() method on that object.
 	When notify() method is called on object by thread it notifies all the threads 
 	which are waiting for that object monitor that object monitor is available now.
 	So, this shows that wait(), notify() and notifyAll() are called on objects only.
-What is SingleTon class and how to prevent it from multi-threading and cloning?
-How loader works with respective content providers?
-Does Thread implements their own Stack, if yes how?  Yes 
+
+** How loader works with respective content providers?
+
+Does Thread implements their own Stack, if yes how?  Yes, Threads have their own stack.
+
 Reflection in java? Reflection is an API which is used to examine or modify the behavior of methods, classes, interfaces at runtime.
 	Ex- Class cls = obj.getClass(); 
 
@@ -417,6 +466,24 @@ Enum is used in switch?
 
 
 Decorator Strategy?
+	Strategy_pattern
+		Defines a family of algorithms,
+		Encapsulates each algorithm, and
+		Makes the algorithms interchangeable within that family.
+		Use Strategy pattern when you have to change algorithm dynamically at run time.
+
+	Decorator
+		Decorator pattern dynamically changes the functionality of an object at runtime without impacting the existing functionality of the objects.
+	When to use:
+		Add additional functionalities/responsibilities dynamically
+		Remove functionalities/responsibilities dynamically
+		Avoid too much of sub-classing to add additional responsibilities.
+		Drawbacks:
+
+	Overuse of Open Closed principle ( Open for extension and Closed for modification). Use this feature sparingly where the code is least likely changed.
+	Too many small classes and will add maintenance overhead.
+	Key difference:	Strategy lets you change the guts of an object. Decorator lets you change the skin.
+
 Diff between == and ===
 	== - Check Equality 
 	=== - Check equality and type 
@@ -429,13 +496,19 @@ How to connect to DB?
 
 
 Importing a package imports its sub packages as will in Java? No
+
 When lot of change are required in data which one should be used string or stringbuffer? StringBuffer 
-Can we call non static method from inside a static method? Non static method are own by object of class and has object level scope and to call non static method from static method we need to create object of class first.
+
+Can we call non static method from inside a static method? Yes we can call, Non static method are own by object of class and has object level scope and to call non static method from static method we need to create object of class first.
 
 --Collection 
 java.util.Collection  IS ROOT INTERFACE
 java.util.Set extends java.util.Collection interface
 java.util.list extends java.util.Collection interface
+
+Hash - Insertion Order Not prevent
+Tree - Sorted
+Linked - Prevent Insertion Order
 
 Set  - Not contain duplicate 
 	HashSet, LinkedHashSet, TreeSet, ConcurrentSkipListSet classes implements Set interface.
@@ -459,10 +532,10 @@ Difference between iterator and enumeration?
 	Most classes in collection like ArrayList, HashSet, Linkedlist.
 	Failfast Arraylist , vector , HashMap.
 Iterator has remove method? Yes
-ConcusrntHashMap? It is synchronized map  which is divided into diff segments based on concurrency level diff thread can access diff seg concurrently.
-
-Which methods you need to override to use any object as key in HashMap?
-equal and hashMap
+Concurrent HashMap? It is synchronized map  which is divided into diff segments based on concurrency level diff thread can access diff seg concurrently.
+What is Concurrent Hashmap? Compare it with Hashmap. 
+Which methods you need to override to use any object as key in HashMap? equal and hashCode
+Can we add a new entry to Hashmap while iterating?
 How to sort used defined Object in Java? Comparable(compareTo()) and comparator(compare() and equal()).
 List vs set 
 HashMap vs HasTable?
@@ -497,25 +570,40 @@ How to store unique element in array?
 Find duplicate in array?		
 how to sort employee object in java ?		
 Any key value pair collection in java where key has to be in sorted order? TreeMap , if we try to add any custome object as key to Treemap it will give us class cast exception 
-		
+I have a set of elements which are not duplicates. Which collection you would use to store these objects?		
+Can you explain the hashing technique to make Java store all specific objects in one bucket? 
+
+
 --Design patterns 
+Do you have deep knowledge of design patterns? 
 Singleton Pattern - Create only once class object through system. / One and only one instance of particular class is carted per classloader.
 	Private constructor and static instance make class singleton.
 prototype
 Builder Pattern 
 Abstract Factory 
 Bridge
+What is the design pattern used in Spring IOC? 
+Do you know what design pattern is used in java IO stream?
+
 
 
 --Exception 
-ClassNotFound Exception and noClassDefination Exception?
-Checked and Unchecked Exception?
 Exception Hierarchy? 
 Explain exception handling ? Checked and Unchecked Exception?
+ClassNotFoundException and noClassDefination Exception?
+	ClassNotFoundException is a runtime exception that is thrown when an application tries to load a class at runtime using the Class.forName() or loadClass() or findSystemClass() methods ,and the class with specified name are not found in the classpath. 
+	
+	NoClassDefFoundError is an error that is thrown when the Java Runtime System tries to load the definition of a class, and that class definition is no longer available. The required class definition was present at compile time, but it was missing at runtime. 
+
 What will happen if we put return statement or system.exit(0) in try or catch block ? will finally block execute?
 We can use return statement in finally block? Yes
 Diff between throw , throws , throwable?
 Can we catch multiple exception in same catch clause? Yes depends on inheritance hierarchy.
+
+-----------------------------Generics-------------------------
+
+What is the use of generics? How generics help developer?
+Which case do you use ? (Question Mark) in generics? 
 
 ACID properties - 
 	Atomicity 
@@ -544,7 +632,13 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 9. Find the length of max object in a list of objects
 
 10. Given a string return true if it contains all the alphabets from a-z
-
+	public static boolean checkStringForAllLetterUsingStream(String input) {
+		long c = input.toLowerCase().chars()
+		  .filter(ch -> ch >= 'a' && ch <= 'z')
+		  .distinct()
+		  .count();
+		return c == 26;
+	}
 11. First one was to check the valid parentheses
 
 12.Second one was to implement Math.pow(x,n)
@@ -569,10 +663,6 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 		}
 
 	}
-17. Merge Sort
-
 18. Java exceptions
-
-
 
 1) Algorithm part: - We have a list of candidates name, your mission is finding candidates voted more than half of the list of candidates. - NQueen or Sudoku problem. The link here: https://leetcode.com/problems/n-queens/

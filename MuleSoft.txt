@@ -21,7 +21,7 @@ path parm
 Http-listener-main 
 
 Flow variable and expression. 
-Flow variable, Sessions and Record diff
+Flow variable, Sessions and Record Diff
 Choice variable 
 
 Http Listener and Http requester 
