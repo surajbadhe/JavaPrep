@@ -51,11 +51,25 @@ What is API gateway - https://www.youtube.com/watch?v=vHQqQBYJtLI
 What is rate limiting and throttling 
 	Rate Limiting - policy limits the number of requests an API accepts within a window of time. The API rejects requests that exceed the limit.
 	Multiple clients allowed to send called an Application Rate Limiting. If they are starting to send too many requests, their connection gets throttled. This means the processing slows down but does not disconnect.
-SSL in api gateway
+SSL(Secure socket layer) in api gateway
+What is One way and two way SSL ? http://tutorialspedia.com/an-overview-of-one-way-ssl-and-two-way-ssl/
+	Secure socket layer - https://www.youtube.com/watch?v=SJJmoDZ3il8
+	Successor of SSL -> TLS Transport layer security 
+	
+	
+	
 Policies in mule 
 
 
 1. What is RAML and why we use it?RESTful API Modeling Language
 	RAML can also be used for documentation purpose.Helps client know, what the service is and what/how all operations can be invoked.
 	RAML contains endpoint URL, request/response schema, HTTP methods and query and URI parameter.
-	RAML helps the developer in creating the initial structure of this API. 
+	RAML helps the developer in creating the initial structure of this API.
+	
+APIkit Router
+	During your app development lifecycle, you can build Mule REST or SOAP APIs from an API specification using APIkit.
+	Based on an API RAML file, it routes arriving calls to the corresponding flow depending on the resource and method. See APIkit documentation.
+Choice
+	Evaluates a message against specified criteria, then sends it to the first message processor that matches those criteria.
+	
+The Transform Message component carries out transformations over the input data it receives. You can explicitly write out a transformation in DataWeave language, or you can use the UI to build it implicitly through dragging and dropping elements.

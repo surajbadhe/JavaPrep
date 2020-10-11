@@ -17,7 +17,7 @@ Find all employee which are also manager?
 select e.name m.name from emp e, emp m where e.mgrId=m.empId
 
 Select Employee hired/Joined on same day?
-Select a.name, a.date from emp a, empb where a.joining=b.joining & a.name > b.name 
+Select a.name, a.date from emp a, emp b where a.joining=b.joining & a.name > b.name 
 
 Write a SQL query to find the names of employees that begin with ‘A’?
 	SELECT * FROM Table_name WHERE EmpName like 'A%'
