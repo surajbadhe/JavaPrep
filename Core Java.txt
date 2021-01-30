@@ -2,11 +2,11 @@ https://www.javamadesoeasy.com/
 Tricky Programs : https://www.youtube.com/playlist?list=PLcow8_btriE0fB-UarDDFauM4mS5nsc1F
 				  https://www.programiz.com/java-programming/examples/alphabet#:~:text=In%20Java%2C%20the%20char%20variable,z%20is%20stored%20as%20122.
 http://www.javainterview.in/p/design-patterns-interview-questions.html
+
 "Java is always pass by value not pass by reference"
 --Core Java / J2EE 
 1.6 / 1.7 / 1.8 Java feature
-Static Imports Java 1.5 feature ? Helps to access any static member of class directly. Ex. we can use out.print("Hello"); No need of system.out
-	
+
 Java 5 Features 
 	- For-each loop (Java 5)
 	- Generics: provides compile-time (static) type safety for collections and eliminates the need for most typecasts (type conversion).
@@ -15,14 +15,7 @@ Java 5 Features
 	- Scanner class for parsing data from various input streams and buffers.
 	- StringBuilder class (in java.lang package)
 	- Autoboxing/unboxing: automatic conversions between primitive types (such as int) and primitive wrapper classes (such as integer).
-	- Metadata: also called annotations; allows language constructs such as classes and methods to be tagged with additional data, which can then be processed by metadata-aware utilities.
-	- Enumerations: the enum keyword creates a typesafe, ordered list of values (such as day.monday, day.tuesday, etc.). Previously this could only be achieved by non-typesafe constant integers or manually constructed classes (typesafe enum pattern).
-	- Swing: new skinnable look and feel, called synth.
-	- Var args: the last parameter of a method can now be declared using a type name followed by three dots (e.g. Void drawtext(string... Lines)). In the calling code any number of parameters of that type can be used and they are then placed in an array to be passed to the method, or alternatively the calling code can pass an array of that type.
-	- Enhanced for each loop: the for loop syntax is extended with special syntax for iterating over each member of either an array or any iterable, such as the standard collection classesfix the previously broken semantics of the java memory model, which defines how threads interact through memory.
-	- Automatic stub generation for rmi objects.
-	- Assertions
-
+	
 Java 6 Features 	
 	Scripting Language Support
 	Performance improvements
@@ -49,6 +42,9 @@ Java 7 Features
 Java 8 important new features
 	Lambda Expressions
 	Functional Interfaces - https://javaconceptoftheday.com/java-8-functional-interfaces/
+		 Must have only one abstract method and any number of default methods.
+	Why 4152++654ethods. hods
+		0rfgtio0The oneliner for this could be “backward compatibility”.If JDK modifies an interface, then all classes which implements this interface will break.
 	Method References
 	Interface Default and Static Methods
 	Streams API
@@ -58,12 +54,16 @@ Java 8 important new features
 	Repeating Annotations and Extended Annotations Support
 	Better Type Inference
 	Reflection API Supports Method Parameter Names
-	Base64
+	Base64 - Base-64 encoding is a way of taking binary data and turning it into text so that it's more easily transmitted in things like e-mail and HTML form data.
 	Parallel Arrays
 	java.util.concurrent Improvements
 	Nashorn JavaScript engine
 	Class dependency analyzer: jdeps
 	JVM changes: Metaspace instead of PermGen
+https://intellipaat.com/blog/interview-question/java-8-interview-questions/
+https://www.simplilearn.com/java-8-interview-questions-and-answers-article
+https://www.netjstech.com/2017/09/java-stream-api-interview-questions.html
+https://javaconceptoftheday.com/solving-real-time-queries-using-java-8-features-employee-management-system/
 
 .Java -> Java compiler -> .class(Byte code) -> JVM (Interpreter)
 
@@ -82,23 +82,28 @@ ClassLoader in Java?
 	It loads classes from different resources. Java ClassLoader is used to load the classes at run time. In other words, JVM performs the linking process at runtime. 
 	It is a subsystem of JVM which is used to load class files.It is mainly responsible for three activities
 	
-	Bootstrap class loader - The bootstrap class loader loads the core Java libraries[5] located in the {JAVA_HOME}/lib directory jdk jars rt.jar
-	Extensions class loader - The extensions class loader loads the code in the extensions directories {JAVA_HOME}/lib/ext directory
-	System Class  Path Loader - The system class loader loads code found on java.class.path, which maps to the system CLASSPATH variable
+	Bootstrap class loader : It loads core java API classes present in JAVA_HOME/jre/lib directory. This path is popularly known as bootstrap path. 
+	Extension class loader : It is child of bootstrap class loader. It loads the classes present in the extensions directories JAVA_HOME/jre/lib/ext(Extension path) or any other directory specified by the java.ext.dirs system property. 
+	System/Application class loader : It is child of extension class loader. It is responsible to load classes from application class path. It internally uses Environment Variable which mapped to java.class.path. 
 	
 	Note - So order of execution is starts from System-classpath-loader then extension then Bootstrap Loader.
 
 Java Singleton - scoped by Java classloader , can not create more than one instance per classloader.
 
 1)OOP 4 principle?
-	- Encapsulation ? Is Data Hiding
-	- Abstraction ? Abstraction means hiding the implementation.
+	- Encapsulation ? Is Data Hiding. Encapsulation is achieved when each object keeps its state private, inside a class. 
+	- Abstraction ? Abstraction means hiding the implementation. Applying abstraction means that each object should only expose a high-level mechanism for using it.
 		- Interface - Achieving pure abstraction 
-		- Abstract Class.
+		- Abstract Class. 
+		- EX - Cell Phone and coffee machine 
 	- Inheritance - Inheritance is a process where child class acquires the properties of super class.
 	- Polymorphism 
 		- Compile time - Method Overloading
 		- Runtime - Method Overriding
+	
+	IS-A relationship based on Inheritance, which can be of two types Class Inheritance or Interface Inheritance.
+	Has-a relationship is composition relationship which is a productive way of code reuse.
+	
 	Association
 		Association refers to the relationship between multiple objects. It refers to how objects are related to each other and how they are using each other's functionality. Composition and aggregation are two types of association.
 
@@ -112,6 +117,7 @@ Java Singleton - scoped by Java classloader , can not create more than one insta
 		Aggregation is a weak association. An association is said to be aggregation if both Objects can exist independently. For example, a Team object and a Player object. The team contains multiple players but a player can exist without a team.
 		Has-A relation ship Ex- Employee HAS-A Address
 	Composition
+		It represents "part-of" relationship
 		The composition is the strong type of association. An association is said to composition if an Object owns another object and another object cannot exist without the owner object. Consider the case of Human having a heart. Here Human object contains the heart and heart cannot exist without Human.
 
 2)There are 3 ways to initialize object in Java?
@@ -127,7 +133,7 @@ Java Singleton - scoped by Java classloader , can not create more than one insta
 		bjectInputStream objectInputStream = new ObjectInputStream(inputStream );
 		Tester tester5 = (MyObject) objectInputStream.readObject();
 
-3)Different Access specifier and Access Modifier?
+3)Different Access specifier and Access Modifier? https://www.youtube.com/watch?v=4BA4VhPyGsE&list=PLVlQHNRLflP-exWR9yw_Xp29Ctek_GQTG&index=46
 	Private - more restrictive
 	Default
 	Protected
@@ -143,15 +149,16 @@ Java Singleton - scoped by Java classloader , can not create more than one insta
 
 5)Some of the non-access specifiers/modifiers in Java are:
 
-	static
-	final
+	static - Used for memory management / Belongs to the class
+	final - Used to restrict the user
 	abstract
 	transient
 	volatile - It means that changes made by one thread to shared data are visible to other threads.
 	synchronized
 	native
 	
-6)Object class methods(Java.lang.Object)- Clone , hashCode , equals , finalize , getClass , wait , notify , notifyAll,toString().
+6)Object class methods(Java.lang.Object)- 
+	Clone , hashCode , equals , finalize , getClass , wait , notify , notifyAll,toString().
 
 7)Java static keyword? 
 	The static can be:
@@ -222,16 +229,21 @@ InstanceOf and GetClass ?
 
 15)Can we define class as private? what will happen if we declare like that? Yes, only inner class can be private 
 
-16)What is constructor chaining in java? whenever the object of class is created, implicitly default no-arg constructor of class and its super class constructor is called.
+16)What is constructor chaining in java? 
+	Constructor chaining is the process of calling one constructor from another constructor with respect to current object.
+	Constructor chaining can be done in two ways:
+		Within same class: It can be done using this() keyword for constructors in same class
+		From base class: by using super() keyword to call constructor from the base class.
 
 17)Can Constructor throws exception in Java? Yes
 	Note - Constructor of a class can never be Final in Java and Final class can never be Abstract.
 18)What is the purpose of Constructor class?
 	Java provides a Constructor class which can be used to get the internal information of a constructor in the class. It is found in the java.lang.reflect package.
-19)Can we create static constructor? 
+
+19)Can we create static constructor? Constructor can not be final , static , abstract, synchronized.
 	No, we cannot define a static constructor in Java, If we are trying to define a constructor with the static keyword a compile-time error will occur
 	Constructor role is only to initializing object and "new" is use to create object.
-	Name same as class name , not return any value, cant define it as final , static , abstract, synchronized.
+	Name same as class name , not return any value, 
 	Can have all access modifiers.
 	
 	Blank Final Variable ?  Are initialize in constructor. 
@@ -242,6 +254,7 @@ InstanceOf and GetClass ?
 		}
 	}
 constructor chaining?  Calling default constructor from parameterized constructor, use this keyword to call this(); 
+
 Method Overriding? Method of superclass is overridden in subclass to provide more specific implementation in java.
 
 What is singleton class? Singleton class means only one instance of class can exist.
@@ -249,6 +262,7 @@ What is singleton class? Singleton class means only one instance of class can ex
 	Make constructor as private.
 	Create public static instance() method.
 	Lazy initialization 
+	
 	class Singleton{
 		private static Singleton instance;
 		private Singleton(){}
@@ -363,7 +377,7 @@ Serialization - Mechanism to write state of object into a byte stream.
 Serializable is marker interface.
 	Marker interface is an interface with no method declared.
 Marker Interface? Marker interface is an interface with no method declared.
-
+	In simple words Marker Interface is an interface with no fields or method within it. It helps in identifying the special object from normal objects. It just conveys to JVM that the class implementing an interface of this category will have some special behaviour. Also we can't create marker interface as you can't instruct JVM to add special behaviour to all classes implementing special interface. Now a days we do not use Marker Interface, all it's work is done by annotations.
 Difference between Final , Finally , finalize
 	Final - final can be applied to variable, method and class in java. We can define Final variable, method and class 
 	Finally - finally is a block.
@@ -611,7 +625,7 @@ List  - Ordered  contains duplicate
 	Vector, 
 	CopyOnWriteArrayList 
 	
-Set  - Not contain duplicate 
+Set  - unordered not contain duplicate 
 	HashSet, 
 	LinkedHashSet, 
 	TreeSet
@@ -779,8 +793,23 @@ Sort map on basis of key?
 Equal and hashcode contract? 		
 How to sort array?
 How to store unique element in array?
+	Set<Integer> uniqKeys = new TreeSet<Integer>();
+	uniqKeys.addAll(Arrays.asList(numbers));
 Find duplicate in array?		
-how to sort employee object in java ?		
+	// First solution : finding duplicates using brute force method
+	// Second solution : use HashSet data structure to find duplicates
+	// Third solution : using Hash table data structure to find duplicates
+
+how to sort employee object in java ?	
+		Comparator sortingByName = new Comparator() {
+		   @Override
+		   public int compare(Student s1, Student s2) {
+			return s1.getName().compareTo(s2.getName());
+		   }
+		};
+		Using labda
+		Comparator sortingByName =(Student s1, Student s2)->s1.getName().compareTo(s2.getName());
+
 Any key value pair collection in java where key has to be in sorted order? TreeMap , if we try to add any custome object as key to Treemap it will give us class cast exception 
 I have a set of elements which are not duplicates. Which collection you would use to store these objects?		
 Can you explain the hashing technique to make Java store all specific objects in one bucket? 
@@ -797,9 +826,17 @@ Let’s say you have to build dictionary and multiple users can add data in that
 Do you have deep knowledge of design patterns? 
 Singleton Pattern - Create only once class object through system. / One and only one instance of particular class is carted per classloader.
 	Private constructor and static instance make class singleton.
-prototype
+prototype - Clone is the simplest approach to implement prototype pattern. 
+	Prototype pattern refers to creating duplicate object while keeping performance in mind. This type of design pattern comes under creational pattern as this pattern provides one of the best ways to create an object.
+	This pattern involves implementing a prototype interface which tells to create a clone of the current object. This pattern is used when creation of object directly is costly. For example, an object is to be created after a costly database operation. We can cache the object, returns its clone on next request and update the database as and when needed thus reducing database calls.
 Builder Pattern 
+	The builder pattern provides a build object which is used to construct a complex object called the product. It encapsulates the logic of constructing the different pieces of the product
+Factory Pattern 
+	In Factory pattern, we create object without exposing the creation logic to client and the client use the same common interface to create new type of object.
+	The idea is to use a static member-function (static factory method) which creates & returns instances, hiding the details of class modules from user.
 Abstract Factory 
+	Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+	A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products".
 Bridge
 What is the design pattern used in Spring IOC? 
 Do you know what design pattern is used in java IO stream?
@@ -811,6 +848,12 @@ Composite design pattern Strategy - https://www.geeksforgeeks.org/composite-desi
 	
 ----------------------------------------------Exception ------------------------------------------
 Exception Hierarchy? 
+	Object 
+		Throwable
+			Error 						Exception 
+			
+		Virtual machine errr		Checked and Unchecked
+		
 Explain exception handling ? Checked and Unchecked Exception?
 ClassNotFoundException and noClassDefination Exception?
 	ClassNotFoundException is a runtime exception that is thrown when an application tries to load a class at runtime using the Class.forName() or loadClass() or findSystemClass() methods ,and the class with specified name are not found in the classpath. 
@@ -864,7 +907,7 @@ Wildcard in Java Generics
 	Lower Bounded Wildcards
 		The purpose of lower bounded wildcards is to restrict the unknown type to be a specific type or a supertype of that type. 
 		Ex- List<? super Integer>  
-	
+-------------------------------------------------------------------------------------------------------
 ACID properties - 
 	Atomicity 
 	Consistency 
@@ -872,8 +915,6 @@ ACID properties -
 	durability
 
 Java exceptions Java 8, filter, map, reduce collection multithreading Java programming
-
-1. Find the pair of integers in an array whose sum is x.
 
 2. Merge Sort
 
@@ -886,6 +927,24 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 6.. https://www.programcreek.com/2014/04/leetcode-surrounded-regions-java/
 
 7. Check a string contain 26 letters
+		stringValue.chars()
+		.filter(i -> i >= 'a' && i <= 'z')
+		.distinct().count() == 26;
+	--------------------------------------------------
+		Set<Integer> chars = new HashSet<>();
+		String s = /* Your lowercase string */;
+		s.length() > 25 && s.chars()
+		.filter(i -> i >= 'a' && i <= 'z') //only alphabet
+		.filter(chars::add)                //add to our tracking set if we reach this point
+		.filter(i -> chars.size() == 26)   //filter the 26th letter found
+		.findAny().isPresent();            //if the 26th is found, return
+	---------------------------------------------------
+		s = "a dog is running crazily on the ground who doesn't care about the world qwertyuioplkjhgfdsazxcvbnm";
+		s = s.replaceAll("[^a-zA-Z]", "");
+		s = s.toLowerCase();        
+		s = s.replaceAll("(.)(?=.*\\1)", "");
+		System.out.println(s);
+		System.out.println(s.length()); //26 (check last part added to String)  So, Yes
 
 8. there are lots brackets in a string , check if all of these brackets are paired for example : {[()]} is paired , {(}) is not
 
@@ -901,14 +960,46 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 	}
 11. First one was to check the valid parentheses
 
-12.Second one was to implement Math.pow(x,n)
+12. Second one was to implement Math.pow(x,n)
 
 13. Reverse the string by words. Like : Hello World, output: World, Hello
+	Reverse String
+		Convert the input string into character array by using the toCharArray():	
+			String input = "suraj Badhe"; 
+			char[] temparray = input.toCharArray(); 
+			int left, right = 0; 
+			right = temparray.length - 1; 
+	  
+			for (left = 0; left < right; left++, right--) { 
+				// Swap values of left and right 
+				char temp = temparray[left]; 
+				temparray[left] = temparray[right]; 
+				temparray[right] = temp; 
+			} 
+			output : ehdab jarus
+		
+		Using StringBuffer
+			String str = "Geeks"; 
+			// conversion from String object to StringBuffer 
+			StringBuffer sbr = new StringBuffer(str); 
+			// To reverse the string 
+			sbr.reverse(); 
+			System.out.println(sbr); 
+	
+	Reverse Number
+		Example 1: Reverse a Number using a while loop in Java
+			int num = 1234, reversed = 0;
+			while(num != 0) {
+				int reminder = num % 10;
+				reversed = reversed * 10 + reminder;
+				num =num/10;
+			}
+			System.out.println("Reversed Number: " + reversed);
 
 14.Find duplicates in an array
 	First Approach - 
 		All we are doing here is to loop over an array and comparing each element to every other element.
-	Secound Approach -
+	Second Approach -
 		 All you need to know is that Set doesn't allow duplicates in Java. Which means if you have added an element into Set and trying to insert duplicate element again, it will not be allowed.
 
 15.Swap int no with out using temp?
@@ -944,7 +1035,8 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 	- subtract all the no from sum you will get the missing no.
 
 19. Count occurrences of each character in string ?
-
+	long count = someString.chars().filter(ch -> ch == 'e').count();
+	
 	static void charCount(String Str){
 		
 		HashMap<character,Integer> charMap=new HashMap<character,Integer>();
@@ -961,40 +1053,8 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 	}
 	Same code will be use for duplicate char / get keySet and iterate it and check its getter than 1.
 
-20. Reverse String
-		Convert the input string into character array by using the toCharArray():	
-			String input = "suraj Badhe"; 
-			char[] temparray = input.toCharArray(); 
-			int left, right = 0; 
-			right = temparray.length - 1; 
-	  
-			for (left = 0; left < right; left++, right--) { 
-				// Swap values of left and right 
-				char temp = temparray[left]; 
-				temparray[left] = temparray[right]; 
-				temparray[right] = temp; 
-			} 
-			output : ehdab jarus
-		
-		Using StringBuffer
-			String str = "Geeks"; 
-			// conversion from String object to StringBuffer 
-			StringBuffer sbr = new StringBuffer(str); 
-			// To reverse the string 
-			sbr.reverse(); 
-			System.out.println(sbr); 
-	
-	Reverse Number
-		Example 1: Reverse a Number using a while loop in Java
-			int num = 1234, reversed = 0;
-			while(num != 0) {
-				int reminder = num % 10;
-				reversed = reversed * 10 + reminder;
-				num =num/10;
-			}
-			System.out.println("Reversed Number: " + reversed);
 
-21.Fibonacci series in Java	
+20.Fibonacci series in Java	
 	In fibonacci series, next number is the sum of previous two numbers for example 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 etc. The first two numbers of fibonacci series are 0 and 1.
 		int count=5;
 		int first=0;
@@ -1024,7 +1084,7 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 		} 
 	 }
 
-22. Number sum 
+21. Number sum 
 		public int sumOfnumber(int no){
 			int sum ,rem=0;
 			while(no!=0){
@@ -1034,15 +1094,15 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 			}
 			return sum;
 		}
-23. factorial 
+22. factorial 
 	public static int factorial(int num){
 		int factorial=1;
 		while(num>0){
 			factorial=factorial*num;
-			n--;
+			num--;
 		}
 	}
-24.Palindrome number in java: 
+23.Palindrome number in java: 
 	A palindrome number is a number that is same after reverse. For example 545, 151, 34543, 343, 171, 48984 are the palindrome numbers. It can also be a string like LOL, MADAM etc.
 		int num = 121, reversed = 0;
 		while(num != 0) {
@@ -1054,7 +1114,8 @@ Java exceptions Java 8, filter, map, reduce collection multithreading Java progr
 		   System.out.println("palindrome number ");    
 		  else    
 		   System.out.println("not palindrome");    
-	
+
+24. find sum of two largest element from array		   
 	
 1) Algorithm part: - We have a list of candidates name, your mission is finding candidates voted more than half of the list of candidates. - NQueen or Sudoku problem. The link here: https://leetcode.com/problems/n-queens/
 

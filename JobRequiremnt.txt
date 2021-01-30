@@ -16,7 +16,7 @@ Good knowledge of Spring Boot
 Knowledge of Spring DI
 Micro Services using Spring Cloud and Netflix OSS
 Knowledge in Docker and Kubernetes
-Knowledge of Infra-as-code and hands-on experience in any of Terraform, Ansibl
+Knowledge of Infra-as-code and hands-on experience in any of Terraform, Ansible
 ------------
 
 Requirement for Apisero
@@ -46,7 +46,9 @@ micro-services vs monolithic - Done
 caching mechanism 
 string manipulation 
   
+Related to Mulesoft, Mule 4 , Cloudhub  
 
+integration, cloud, ci/cd, current job etc. 
 --------------
 
  
@@ -98,3 +100,14 @@ Job Description
 10. Document design decisions and integrations resulting from new designs, system changes, or upgrades.
 11. Participate in SIT, end to end, and unit testing efforts in cooperation with overall Testing coordinator.
 12. Strong Mule Soft experience including Mule Soft ESB.
+
+-------------------------------------
+Bio 
+Current Company - Wipro Limited
+Current CTC -
+Expected CTC -
+Location - Pune
+Preferred Location- Pune
+PAN CARD NUMBER - BNAPB0758A
+Notice Period - 60 Days
+DOB - 29-jan-1990

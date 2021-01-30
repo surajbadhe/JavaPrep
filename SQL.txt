@@ -45,3 +45,5 @@ Truncate is which type of Command ? Its a DDL.
 Truncate and delete Diff?
 
 Procedure and function?
+
+Differentiate between Primary key and a Unique key.

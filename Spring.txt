@@ -4,18 +4,29 @@ Difference between spring and spring boot
 Questions from the previous project, How you secure rest API. Spring Security Configuration.
 (From the previous project) How you will determine the user credentials.
 What is Spring Security and its Methods?
-Diff between IOC and DI?
+
+Diff between IOC and DI?IOC Container?
 Dependency Injection
 	IoC is a design paradigm with the goal of giving more control to the targeted components of your application, the ones getting the work done. While Dependency injection is a pattern used to create instances of objects that other objects rely on without knowing at compile time which class will be used to provide that functionality.
 	
-	a constructor injection?
+	a constructor injection? 
 	a setter injection?
 	an interface injection?
-IOC Container
+Why You Should Use Constructor Injection in Spring ? https://reflectoring.io/constructor-injection/
+
 How to validate request header in Spring?
 Explain Bean lifecycle in Spring framework?
-How to get the id field from headers and store it to a variable ?
+How to get the id field from headers and store it to a variable ? @RequestHeader annotation
+	
+	@GetMapping("/greeting")
+	public ResponseEntity<String> greeting(@RequestHeader("accept-language") String language) {
+		return new ResponseEntity<String>(greeting, HttpStatus.OK);
+	}
+	**
+	public ResponseEntity<String> listAllHeaders(@RequestHeader Map<String, String> headers) {
+	
 RestController vs controller
+	RestController = @controller + @resposeBody
 Http Methods and when you will use what.
 When you will use Post even if you only want to get data not posting.
 
@@ -35,9 +46,7 @@ What are the different scopes of spring bean?
 
 	GlobalSession : It returns a single bean instance per global HTTP session. It is only valid in the context of a web-aware Spring ApplicationContext (Application level session).
 Spring Bean lifecycle?
-IOC
 AOP and its benefits?
-Dependency Injection 
 Application Context and BeanFactory?
 Different type of auto-wiring?
 Different Controller inside Spring?
@@ -68,6 +77,11 @@ What is Spring boot and its features?
 		Spring Actuator 
 		Logging and Security
 What are the advantage of Spring boot?
+	Gives you prodecton ready code 
+	Auto configuration 
+	Spring cli 
+	Spring initializer
+	
 What are the requirement for SpringBoot 2 / mim requirement for SpringBoot?
 	SB 2.2.7 Requires 
 		Java8 / Spring framework 5.1.9 / Maven 3.3 / tomcat9.0
@@ -104,6 +118,7 @@ logging in spring boot ?
 How spring boot is helpful to design microservices
 Differance between @contoller and @RestController?
 What is use of Hystrix and circuit breaker ? how to implement it?
+	Circuit breaker is a design pattern used in software development. It is used to detect failures and encapsulates the logic of preventing a failure from constantly recurring, during maintenance, temporary external system failure or unexpected system difficulties. 
 How to create bean in spring boot java class?
 How you secure your spring boot and mule application in your project 
 Diff of pathvariable and requset parm and queryparm ? which is better to use
@@ -124,7 +139,24 @@ Uses of Spring Boot annotation -
 	@controller 
 	@RequestMapping 
 	@ConditionalOnMissingBean - Auto configuration to back off when bean exist
-What is the use of @EnableAutoCongiguration?
+	
+	@Valid annotation which is required to kick in the validation of the information received,
+	@RequestBody annotation which signifies that the payload in the body of the request will be mapped to a model class which it annotates,
+	
+	EX : 
+		@RestController
+		@RequestMapping("/users")
+		public class UserController {
+			@PostMapping(produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
+			public UserRest createUser(@Valid @RequestBody UserDetailsRequestModel requestUserDetails) {
+				
+				UserRest returnValue = new UserRest();
+				returnValue.setFirstName("Sergey");
+				returnValue.setLastName("Kargopolov");
+				return returnValue;
+			}
+		}
+What is the use of @	AutoCongiguration?
 	Automatic configuration features of the Spring Boot application, which automatically configures things if certain classes are present in classpath
 	Spring Boot 1.0
 	The @EnableAutoConfiguration annotation allows you to selectively exclude certain classes from auto-configuration using exclude attribute as shown below:

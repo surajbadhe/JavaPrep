@@ -25,3 +25,5 @@ https://www.google.co.in/amp/dolszewski.com/spring/accessing-prototype-bean-in-s
 https://dzone.com/articles/overview-of-spring-aspect-oriented-programming-aop
 
 https://www.geeksforgeeks.org/association-composition-aggregation-java/
+
+https://javaconceptoftheday.com/solving-real-time-queries-using-java-8-features-employee-management-system/

@@ -9,7 +9,8 @@ Interview Questions:
 	https://codingnconcepts.com/top-microservices-interview-questions/
 
 SOAP and RestFul Difference? https://www.guru99.com/comparison-between-web-services.html
-
+	SOAP – Simple Object Access Protocol
+	REST -REpresentational State Transfer
 Http Methods? Which HTTP method is not idempotent?
 	The PUT and DELETE methods are defined to be idempotent That is, calling the same PUT request multiple times will always produce the same result..
 	GET, HEAD, PUT and DELETE 
@@ -31,7 +32,7 @@ What is PathParam  and QueryParam?  https://medium.com/1developer/spring-request
 	@PathParam is used to match a part of the URL as a parameter. 
 	For example in an url of the form http://example.com/books/{bookid}, you can use @PathParam("bookid") to get the id of a book.
 	In jersey(JAX-RS) its PathParam  and QueryParam
-	In SpringRest its RequestParam and PathVariable
+	In SpringRest its  PathVariable and  RequestParam
 	
 Webservice is Stateful or Stateless – REST, SOAP?	https://www.xenonstack.com/insights/stateful-and-stateless-applications/
 	A Stateful application remembers specific details of a user like profile, preferences, and user actions. This information is considered as the ‘Status’ of a system.
@@ -56,14 +57,15 @@ Webservice is Stateful or Stateless – REST, SOAP?	https://www.xenonstack.com/i
 What is Monolithic 
 	Means composed all in one piece. A monolithic application is one which is self-contained. All components of the application must be present in order for the code to work.
 
+Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. 
 -----------------------------Micro-services--------------------------
 
 Diff Rest service and Micro-services - 
-	Micro-service is a architectural style fro web application development.
-	REST API is a framework through which developer can inteact with applcaition.
+	Micro-service is a architectural style for web application development.
+	REST API is a framework through which developer can intact with application.
 	
 	Micro-service is more about architecture.
-	Rest focuse on how to expose the MS
+	Rest focuses on how to expose the MS
 	
 Microservices architecture ? What is the need of Micro-services?
 	MSA is an architectural style where the entire application is divided and designed as loosely-coupled, independent services modelled around a business domain.
@@ -97,7 +99,11 @@ Diff of SOA and Micro-services
 	SOA - Service Oriented Architecture 
 	MC 
 New feature of Micro-services
-Why spring boot is preferred for building/design Micro-services
+Why spring boot is preferred for building/design Micro-services?
+	Spring Boot enables building production-ready applications quickly and provides non-functional features:
+	Embedded servers which are easy to deploy with the containers.
+	It helps in monitoring the multiples components.
+	It helps in configuring the components externally.
 
 what things you should consider while developing API Micro-services
 	To help you get started, ask the following questions to yourself.
@@ -185,10 +191,14 @@ Http Response Codes ?
 	405 - Method not allowed 
 	406 - Not acceptable 
 	415 - Ubsupported media type 
-	
 	503 - Service unavailable 
 	504 - Backend timeout
-
+	200 - OK 
+		If a request succeeds, Usually for GET, PUT, DELETE
+	201 - CREATED
+		Creating new objects like messages or tasks will usually return a "201 Created" status. Usually for POST
+	304 - Not Modified
+		This means the request is coming from cache. It was first loaded with a 200 success. Since your last call, no data has changed so your request comes from cache.
 REST web services: synchronous or asynchrous?	
 	"Synchronous" or "Asynchronous" is the behaviour of the client that is requesting the resource. It has nothing to do with REST webservice, its structure, or the supporting server.
 
@@ -202,3 +212,17 @@ REST web services: synchronous or asynchrous?
 ------------------------------------Cloud Computing ------------------------------
 Vertical Scalability vs Horizontal Scalability - https://www.youtube.com/watch?v=YE1ytf15WOQ
 	In terms of cloud computing or general aspects of its Scaling is a property or attribute where our system has the ability to meet the requirement by changing its scale and size.
+
+Proxy and Reverse Proxy? Please find the diagram in repo 
+	Proxy - Multiple client machine connected using proxy to single server 
+		Benefits -
+			caching
+			Blocking Unwanted Sites
+	Reverse Proxy - Client is connected with multiple server using reverse proxy.
+		Benefits - 
+			load balancing 
+			caching logging 
+			isolating internal traffic 
+			Canary Deployment
+			
+		
